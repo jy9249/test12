@@ -1,6 +1,6 @@
-package 정보;
+package z정보;
 
-import z정보.Measurer;
+import 정보.Measurer;
 
 public class Data {
     

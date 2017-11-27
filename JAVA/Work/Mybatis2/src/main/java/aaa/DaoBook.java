@@ -84,14 +84,22 @@ public class DaoBook implements IBook {
     @Override
     public int updateBook(ModelBook wherebook, ModelBook setbook)
             throws Exception {
+        int result = -1;
+        Map<String, Object> map = new HashMap<>();
+        map.put("wherebook", wherebook);
+        map.put("setbook", setbook);
+        result = session.update("mapper.mapperBook.updateBook", map);        
         // TODO Auto-generated method stub
-        return 0;
+        return result;
     }
     
     @Override
     public int deleteBook(ModelBook book) throws Exception {
-        // TODO Auto-generated method stub
-        return 0;
+        int result =-1;
+        Map<String,Object> map =new HashMap<>();
+        map.remove("book",book);
+        result =session.delete("mapper.mapperBook.deleteBook", map);
+        return result;
     }
     
     @Override

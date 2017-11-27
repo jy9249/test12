@@ -1,12 +1,12 @@
-package 정보;
+package z정보;
 
 import java.awt.Rectangle;
 import java.util.Arrays;
 
-import z정보.AreaMeasurer;
-import z정보.Data;
-import z정보.Measurer;
-import z정보.Rect;
+import 정보.AreaMeasurer;
+import 정보.Data;
+import 정보.Measurer;
+import 정보.Rect;
 
 public class MeasurerTester {
     

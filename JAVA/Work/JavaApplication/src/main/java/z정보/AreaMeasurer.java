@@ -1,8 +1,8 @@
-package 정보;
+package z정보;
 
 import java.awt.Rectangle;
 
-import z정보.Measurer;
+import 정보.Measurer;
 
 public class AreaMeasurer implements Measurer // 넓이
 {
