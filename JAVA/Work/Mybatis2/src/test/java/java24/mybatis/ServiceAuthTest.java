@@ -30,6 +30,8 @@ public class ServiceAuthTest {
         // DI를 이용한 servicebook 인스턴스 생성
         service = context.getBean("serviceauth", ServiceAuth.class); // new ServiceBook();
         
+        
+        
     }
     
     @Test

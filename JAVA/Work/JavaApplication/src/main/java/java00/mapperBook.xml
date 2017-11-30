@@ -68,9 +68,5 @@
            </if>
     </delete>
     
-    <select id="selectDynamic" parameterType="ModelBook" resultType="ModelBook">
-    
-    </select>
-    
     
 </mapper>
