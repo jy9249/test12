@@ -3,7 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    
+    <script type="text/javascript">
+        var foo;
+        for(var i in foo){
+            console.log(typeof i,i+':'+foo[i],typeof foo[i]);
+
+        }
+
+//함수를 제외한 열거
+
+
+//배열만 열거
+for(var i in foo){
+if(typeof foo[i] != 'function' ) {
+console.log(i+':'+foo[i]);}
+}
+
+
+    </script>
 </head>
 <body>
 
