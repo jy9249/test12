@@ -30,10 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //버튼3 찾기
         button3 = findViewById(R.id.button3);
-        button3.setOnClickListener(new innerclass());
+        innerclass handler =new innerclass();
+        button3.setOnClickListener(handler);
 
         button4 = findViewById(R.id.button4);
-        button4.setOnClickListener(this);
+        button4.setOnClickListener(handler);
 
     }
 
@@ -55,6 +56,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public void onClick(View view) {
+
+            int id = view.getId(); //클릭된 버튼 ID
+            if (id == R.id.button3) {
+
+            } else if (id == R.id.button4) {
+
+            } else if (id == R.id.button2) {
+
+            } else if (id == R.id.button1) {
+            }
             Toast.makeText(getApplicationContext(), "내부 클래스 리스너", Toast.LENGTH_SHORT).show();
 
 

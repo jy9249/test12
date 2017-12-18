@@ -1,6 +1,7 @@
 package com.example.administrator.simplecalculator;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,48 +9,121 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button BtnAdd = null;
-    private Button BtnSub = null;
-    private Button BtnDiv = null;
-    private Button BtnMul = null;
-    private Button BtnRem = null;
-    public TextView textView2 = null;
-    private EditText Edit1 = null;
-    private EditText Edit2 = null;
-    
+public class MainActivity extends Activity {
+
+    EditText edit1, edit2;
+    Button btnAdd, btnSub, btnMul, btnDiv, btnRem;
+    TextView textResult;
+    String num1, num2;
+    Double result;
 
     @Override
-
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("계산기");
+
+        edit1 = (EditText) findViewById(R.id.Edit1);
+        edit2 = (EditText) findViewById(R.id.Edit2);
+        btnAdd = (Button) findViewById(R.id.BtnAdd);
+        btnSub = (Button) findViewById(R.id.BtnSub);
+        btnMul = (Button) findViewById(R.id.BtnMul);
+        btnDiv = (Button) findViewById(R.id.BtnDiv);
+        btnRem = (Button) findViewById(R.id.BtnRem);
+
+        textResult = (TextView) findViewById(R.id.TextResult);
+
+        innerclass handler = new innerclass();
+        btnAdd.setOnClickListener(handler);
+        btnSub.setOnClickListener(handler);
+        btnMul.setOnClickListener(handler);
+        btnDiv.setOnClickListener(handler);
+        btnRem.setOnClickListener(handler);
 
 
-        setTitle("간단한 계산기 만들기");
-        Edit1 = findViewById(R.id.Edit1);
-        Edit2 = findViewById(R.id.Edit2);
-        BtnAdd = findViewById(R.id.BtnAdd);
-        BtnSub = findViewById(R.id.BtnDiv);
-        BtnMul = findViewById(R.id.BtnMul);
-        BtnDiv = findViewById(R.id.BtnRem);
-        BtnRem = findViewById(R.id.BtnRem);
-        textView2 = findViewById(R.id.textView2);
-
-        BtnAdd = findViewById(R.id.BtnAdd);
     }
 
-    @Override
-    public void onClick(View view) {
-        String num1 = Edit1.getText().toString();
-        String num2 = Edit2.getText().toString();
-    if(num1.trim().equals("")|| num2.trim().equals("")) {
-        Toast.makeText(getApplicationContext(), "입력 값이 없습니다", Toast.LENGTH_SHORT).show();
-    }
-    else {
-        double result = Double.parseDouble(num1)
-        +Double.parseDouble(num2);
-        
-    }
+
+    private class innerclass implements View.OnClickListener {
+        @Override
+        public void onClick(View arg0) {
+
+            num1 = edit1.getText().toString();
+            num2 = edit2.getText().toString();
+
+            if (num1.equals("") || num2.equals("")) {
+                Toast.makeText(getApplicationContext(), "값을 입력하시오", Toast.LENGTH_SHORT).show();
+            }
+
+            switch (arg0.getId()) {
+
+
+                case R.id.BtnAdd:
+
+
+                    result = Double.parseDouble(num1)
+                            + Double.parseDouble(num2);
+                    textResult.setText("계산 결과 : " + result.toString());
+
+                    break;
+
+
+                case R.id.BtnSub:
+
+
+                    result = Double.parseDouble(num1)
+                            - Double.parseDouble(num2);
+                    textResult.setText("계산 결과 : " + result.toString());
+
+                    break;
+
+
+                case R.id.BtnMul:
+
+
+                    result = Double.parseDouble(num1)
+                            * Double.parseDouble(num2);
+                    textResult.setText("계산 결과 : " + result.toString());
+
+                    break;
+
+                case R.id.BtnDiv:
+
+
+                    if (num2.trim().equals("0")) {
+                        Toast.makeText(getApplicationContext(),
+                                "0으로 나누면 안됩니다!", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        result = Double.parseDouble(num1) / Double.parseDouble(num2);
+
+                        textResult.setText("계산 결과 : " + result.toString(result));
+                    }
+
+
+                    break;
+                case R.id.BtnRem:
+
+                        result = Double.parseDouble(num1)  % Double.parseDouble(num2);
+                        textResult.setText("계산 결과 : " + result.toString());
+
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ad03-01.LayoutExample.iml" filepath="$PROJECT_DIR$/ad03-01.LayoutExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st1constaintLayout/st1constaintLayout.iml" filepath="$PROJECT_DIR$/st1constaintLayout/st1constaintLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st2linearLayout/st2linearLayout.iml" filepath="$PROJECT_DIR$/st2linearLayout/st2linearLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st3relativeLayout/st3relativeLayout.iml" filepath="$PROJECT_DIR$/st3relativeLayout/st3relativeLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st4gridLayout/st4gridLayout.iml" filepath="$PROJECT_DIR$/st4gridLayout/st4gridLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/st5frameLayout/st5framelayout.iml" filepath="$PROJECT_DIR$/st5frameLayout/st5framelayout.iml" />
+    </modules>
+  </component>
+</project>
