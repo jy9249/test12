@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map>
+    <boolean name="SOUND_SET" value="true"/>
+    <int name="TEXT_NUMBER" value="5666"/>
+    <String name="TEXT_STRING" value="adf"/>
+</map>
