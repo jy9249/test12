@@ -22,7 +22,7 @@ import java.util.zip.Inflater;
 public class ColorOptionView_ extends LinearLayout {
     private View value;
     private ImageView image;
-
+    private TextView title;
 
     public ColorOptionView_(Context context) {
         super(context);
@@ -40,10 +40,11 @@ public class ColorOptionView_ extends LinearLayout {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ColorOptionView, defStyleAttr, 0);
         String titleText = a.getString(R.styleable.ColorOptionView_titleText);
         @SuppressLint("ResourceAsColor")
-        int valueColor = a.getColor(R.styleable.ColorOptionView_valueColor, android.R.color.holo_blue_bright);
+        int valueColor = a.getColor(R.styleable.ColorOptionView_valueColor, 0);
         a.recycle();  //재사용
 
         //LinearLayout 관련 속성 설정.
@@ -57,7 +58,7 @@ public class ColorOptionView_ extends LinearLayout {
 
 
         //0번째 자식에 값 설정
-        TextView title = (TextView) this.getChildAt(0);
+        title = (TextView) this.getChildAt(0);
         title.setText(titleText);
 
         //1번째 자식에 값 설정
@@ -80,9 +81,16 @@ public class ColorOptionView_ extends LinearLayout {
 
     }
 
-    public void setImateVisible(boolean visible) {
+    public void setImagaVisible(boolean visible) {
 
         image.setVisibility(visible ? View.VISIBLE : View.GONE);
+    }
+
+    public String getText() {
+
+        return title.getText().toString();
+
+
     }
 }
 

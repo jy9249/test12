@@ -15,9 +15,11 @@
         android:background="?android:selectableItemBackground"
         app:titleText="Forground Color"
         app:valueColor="@android:color/holo_orange_dark">
-    
-    
     </com.example.administrator.ad21_05customviewrrr.ColorOptionView_>
+    
+    
+    
+    
     
     <com.example.administrator.ad21_05customviewrrr.ColorOptionView_
         android:id="@+id/view2"
@@ -29,5 +31,15 @@
     
     
     </com.example.administrator.ad21_05customviewrrr.ColorOptionView_>
-
+    
+    <com.example.administrator.ad21_05customviewrrr.ColorOptionView_
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        app:titleText="Forground Color"
+        app:valueColor="@android:color/holo_green_dark">
+    
+    
+    </com.example.administrator.ad21_05customviewrrr.ColorOptionView_>
 </LinearLayout>
